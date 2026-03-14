@@ -13,7 +13,6 @@ Bu proje, Transfer Learning ile derin öğrenme yapılıp oluşturulmuş olan be
 - AI modeli FastAPI üzerinden deploy edildi  
 - Kullanıcıya özel analiz geçmişi ve sonuçlar  
 - Prediction confidence gösterimi  
-- AI Heatmap (Grad-CAM) ile hastalığın bulunduğu alanın görselleştirilmesi  
 - Dashboard ve grafiklerle veri analizi  
 - Docker ile kolay deploy  
 
