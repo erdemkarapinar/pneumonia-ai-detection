@@ -37,19 +37,19 @@ Bu proje, Transfer Learning ile derin öğrenme yapılıp oluşturulmuş olan be
 zature_tespit
 ├──pneumonia-project/
 ├   │
-├    ├── laravel-app/ # Laravel Web App
-├    │ ├── app/
-├    │ ├── routes/
-├    │ ├── resources/views/
-├    │ └── ...
-├    │
-├    ├── ai-api/ # Python AI API
-├    │ ├── main.py
-├    │ ├── best_model.h5
-├    │ └── venv/
-├    │
-├    ├── docker-compose.yml
-├    └── requirements.txt
+├   ├── laravel-app/ # Laravel Web App
+├   │ ├── app/
+├   │ ├── routes/
+├   │ ├── resources/views/
+├   │ └── ...
+├   │
+├   ├── ai-api/ # Python AI API
+├   │ ├── main.py
+├   │ ├── best_model.h5
+├   │ └── venv/
+├   │
+├   ├── docker-compose.yml
+├   └── requirements.txt
 ├──README.md
 ├──transfer_learning.py
-# Laravel-Ai-Pneumonia-Project
+
