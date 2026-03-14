@@ -1,0 +1,48 @@
+services:
+  # MySQL Veritabanı
+  mysql-db:
+    image: mysql:8.0
+    platform: linux/amd64
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: pneumonia_db
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Laravel Uygulaması
+  laravel-app:
+    build:
+      context: ./laravel-app
+    container_name: laravel-app
+    ports:
+      - "8001:8000" # Dışarıdan 8001 ile bağlanacağız
+    volumes:
+      - ./laravel-app:/var/www/html
+    environment:
+      - DB_HOST=mysql-db
+      - DB_DATABASE=pneumonia_db
+      - DB_USERNAME=user
+      - DB_PASSWORD=user_password
+    depends_on:
+      - mysql-db
+    # Laravel'in dahili sunucusunu başlatmak için
+    command: php artisan serve --host=0.0.0.0 --port=8000
+
+  # FastAPI (AI) Servisi
+  ai-api:
+    build:
+      context: ./ai-api
+    container_name: ai-api
+    ports:
+      - "8080:8000"
+    depends_on:
+      - mysql-db
+
+volumes:
+  db_data:

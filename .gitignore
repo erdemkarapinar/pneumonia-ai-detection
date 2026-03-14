@@ -1,0 +1,33 @@
+# OS
+.DS_Store
+
+# Environment
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+
+# Dataset
+dataset/
+data/
+
+# Node
+node_modules/
+
+# Laravel
+/vendor
+/storage/*.key
+/storage/app/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
